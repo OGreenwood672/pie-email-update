@@ -35,6 +35,22 @@ A Rust-powered tool that takes your Trading 212 pie and sends you daily email up
    cargo run
    ```
 
+4. **Create a Cron Job**
+
+This is what I put for my WSL Cron Job, may differ for you
+
+```bash
+0 18 * * * cd /mnt/c/Users/<USER>/OneDrive/Desktop/rust/money && ./target/release/money >> /mnt/c/Users/<USER>/OneDrive/Desktop/rust/cron.log 2>&1
+```
+
+The cron.log outputs errors/"email send successfully". Helpful for debugging.
+
+In WSL, also activate the cron job feature if you haven't already.
+
+```bash
+sudo service cron start
+```
+
 ## 📬 How it works
 
 1. Connects to your Trading 212 account using your API token.
