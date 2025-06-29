@@ -11,25 +11,25 @@ mod notify;
 struct Ticker {
     ticker: String,
 
-    #[serde(rename = "currentShare")]
-    current_share: f64,
+    // #[serde(rename = "currentShare")]
+    // current_share: f64,
 
-    #[serde(rename = "expectedShare")]
-    expected_share: f64,
+    // #[serde(rename = "expectedShare")]
+    // expected_share: f64,
 }
 
-#[derive(Deserialize, Debug)]
-struct PieSettings {
-    name: String,
+// #[derive(Deserialize, Debug)]
+// struct PieSettings {
+//     name: String,
 
-    #[serde(rename = "creationDate")]
-    creation_date: f64,
-    id: u32,
-}
+//     #[serde(rename = "creationDate")]
+//     creation_date: f64,
+//     id: u32,
+// }
 
 #[derive(Deserialize, Debug)]
 struct Pie {
-    settings: PieSettings,
+    // settings: PieSettings,
     instruments: Vec<Ticker>,
 }
 
@@ -223,7 +223,9 @@ fn main() {
 
     let convertor = read_txt_to_dict();
 
-    let pie: Pie = fetch_pie(4667358);
+    let pie_id = std::env::var("TRADING_PIE_ID").expect("TRADING_PIE_ID must be set.");
+
+    let pie: Pie = fetch_pie(pie_id.parse().expect("Invalid pie ID"));
 
     let tickers: Vec<&str> = pie
         .instruments
