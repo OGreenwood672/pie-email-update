@@ -1,6 +1,6 @@
 # 🥧 Money Pie Notifier 📈
 
-A Rust-powered tool that takes your Trading 212 pie and sends you daily email updates with the latest performance, using the Financial Modeling Prep API.
+A Rust-powered tool that takes your Trading 212 pie and sends you daily email updates with the latest performance of the stocks inside that pie, using the Financial Modeling Prep API.
 
 ## 🚀 Features
 
