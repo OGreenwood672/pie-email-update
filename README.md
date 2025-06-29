@@ -42,6 +42,12 @@ A Rust-powered tool that takes your Trading 212 pie and sends you daily email up
 3. **Build and run the project:**
 
    ```bash
+   cargo build --release
+   ```
+
+   Or to just run the project directly:
+
+   ```bash
    cargo run
    ```
 
