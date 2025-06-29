@@ -1,0 +1,12 @@
+[package]
+name = "money"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+dotenv = "0.15.0"
+mail-builder = "0.4.3"
+mail-send = "0.5.1"
+reqwest = { version = "0.12.20", features = ["blocking", "json"] }
+serde = { version = "1.0.219", features = ["derive"] }
+tokio = "1.45.1"
